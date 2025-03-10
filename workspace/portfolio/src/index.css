@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.content {
+  padding-top: 60px;
+}
+
+.section {
+  padding: 4rem 1rem;
+  min-height: 100vh;
+}
+
+.section {
+  scroll-margin-top: 60px; /* Adjust the value as needed */
+}
+section {
+  padding-top: 60px;    /* Space equal to the navbar's height */
+  margin-top: -60px;    /* Negative margin to counter the extra space */
+}
+.section-wrapper {
+  position: relative;
+}
+
+.section-wrapper::before {
+  content: "";
+  display: block;
+  height: 60px;        /* Navbar height */
+  margin-top: -60px;   /* Pull it up */
+}
