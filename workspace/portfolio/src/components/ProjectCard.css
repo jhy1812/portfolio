@@ -1,0 +1,75 @@
+.project-card {
+  width: 100%;
+  aspect-ratio: 3/3;
+  position: relative;
+  perspective: 1000px;
+  overflow: hidden;
+}
+.project-card .front,
+.project-card .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 1s;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.project-card .front img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.6s ease 0.2s;
+  border: 7px solid #060c1f;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  border-color: #fff;
+}
+.project-card .back {
+  transform: rotateY(-180deg);
+}
+.project-card .back img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.6s ease 0.2s;
+  border: 7px solid #060c1f;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  border-color: #041135;
+}
+.project-card figcaption {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  backface-visibility: hidden;
+  transform: translate(-50%, -50%) translateZ(100px);
+  color: #fff;
+  font-size: 20px;
+  display: block;
+  text-align: center;
+}
+.project-card figcaption h3 {
+  min-width: 200px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 24px;
+  color: white;
+}
+.project-card figcaption p {
+  font-weight: 200;
+  padding-top: 5px;
+  color: white;
+}
+.project-card:hover .front {
+  transform: rotateY(180deg);
+}
+.project-card:hover .back {
+  transform: rotateY(0);
+}

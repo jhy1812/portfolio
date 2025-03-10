@@ -1,0 +1,25 @@
+.projects-section {
+  padding: 2rem;
+  text-align: center;
+
+  h3 {
+    margin-bottom: 1.5rem;
+    color: black;
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
