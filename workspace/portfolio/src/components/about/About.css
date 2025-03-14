@@ -3,6 +3,11 @@
   padding: 2rem;
   align-items: center;
   margin-top: 1rem;
+  flex-direction: column;
+}
+.about-section .container {
+  display: flex;
+  flex-direction: row;
 }
 .about-section .left {
   flex: 1;
@@ -12,7 +17,6 @@
 }
 .about-section .right {
   flex: 1;
-  padding-left: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -23,14 +27,11 @@
     flex-direction: column;
     text-align: center;
   }
+  .about-section .container {
+    flex-direction: column;
+  }
   .about-section .right {
     align-items: center;
     padding-left: 0;
-  }
-  .about-section .left {
-    width: 60%;
-  }
-  .skills {
-    flex-direction: row;
   }
 }

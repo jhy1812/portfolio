@@ -1,0 +1,101 @@
+$desktop-height: 80vh;  // Frame size for desktop projects
+$mobile-height: 40vh;    // Frame size for mobile projects
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5vh;
+  box-shadow: 0px 20px 25px 1px rgba(0,0,0,0.25);
+  margin: 0 auto;
+
+  &.desktop {
+    height: $desktop-height;
+    width: $desktop-height / 2;
+  }
+  &.mobile {
+    height: $mobile-height;
+    width: $mobile-height / 2;
+  }
+}
+
+.carousel-inner {
+  display: flex;
+  height: 100%;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  position: relative;
+  text-align: center;
+  color: #fff;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.5);
+    padding: 1rem;
+    border-radius: 10px;
+    
+    h1 {
+      margin: 0 0 0.5rem;
+      font-size: 3vh;
+    }
+    
+    p {
+      margin: 0;
+      font-size: 2.5vh;
+    }
+  }
+}
+
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scaleX(0.8);
+  transition: opacity 200ms linear;
+  z-index: 9999;
+  opacity: 0.5;
+  width: 7vh;
+  height: 7vh;
+  
+  &:hover {
+    opacity: 0.7;
+  }
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+.button_prev {
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 1.5vh solid transparent;
+  border-bottom: 1.5vh solid transparent;
+  border-right: 2.5vh solid #fff;
+}
+
+.button_next {
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 1.5vh solid transparent;
+  border-bottom: 1.5vh solid transparent;
+  border-left: 2.5vh solid #fff;
+}
