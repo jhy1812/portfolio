@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Navbar from './components/Navbar.jsx'
-import About from './components/About.jsx'
-import Projects from './components/Projects.jsx';
-import Contact from './components/Contact.jsx';
+import Navbar from './components/common/Navbar.jsx'
+// import About from './components/About.jsx'
+import Projects from './components/projects/Projects.jsx';
+import Contact from './components/contact/Contact.jsx';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 

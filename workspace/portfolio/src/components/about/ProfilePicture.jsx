@@ -50,7 +50,7 @@ const ProfilePicture = ({ imageSrc, backgroundSrc, title }) => {
         <div
           className="card__bg"
           style={{
-            background: `url(${process.env.PUBLIC_URL + 'code.jpg'}) center / cover no-repeat`
+            background: `url(${process.env.PUBLIC_URL + '/code.jpg'}) center / cover no-repeat`
           }}
         ></div>
         <img className="card__img" src={process.env.PUBLIC_URL + '/profileremove.png'} alt={title} />
