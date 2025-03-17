@@ -1,0 +1,188 @@
+.contact-section {
+  margin-top: 5rem;
+}
+.contact-section h3 {
+  text-align: center;
+}
+
+.contact-me {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Upper Section: Two columns side by side */
+.upper-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.upper-section .contact-info, .upper-section .comment-form {
+  flex: 1 1 45%;
+  margin: 0.5rem;
+}
+.upper-section .contact-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem; /* Increased spacing */
+  color: #333;
+}
+.upper-section .contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+.upper-section .contact-info ul li {
+  margin-bottom: 0.5rem; /* More space between items */
+  display: flex;
+  align-items: center;
+}
+.upper-section .contact-info ul li .contact-item {
+  font-size: 1rem;
+  color: #333;
+}
+.upper-section .contact-info ul li .contact-link {
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  margin-left: 0.3rem;
+}
+.upper-section .contact-info ul li .contact-link:hover {
+  text-decoration: underline;
+}
+.upper-section .contact-info ul li .copy-button {
+  margin-left: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.upper-section .comment-form h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+.upper-section .comment-form form {
+  display: flex;
+  flex-direction: column;
+}
+.upper-section .comment-form form input, .upper-section .comment-form form textarea {
+  margin-bottom: 0.5rem;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.upper-section .comment-form form button {
+  padding: 0.6rem;
+  font-size: 1rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.upper-section .comment-form form button:hover {
+  background: #0056b3;
+}
+.upper-section .comment-form .status {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Lower Section: Comment List */
+.lower-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.lower-section .comment-list {
+  max-height: 300px; /* Fixed height for comment list only */
+  overflow-y: auto;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+.lower-section .comment-list .comment-item {
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+}
+.lower-section .comment-list .comment-item:last-child {
+  border-bottom: none;
+}
+.lower-section .comment-list .comment-item .comment-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+.lower-section .comment-list .comment-item .comment-header .comment-nickname {
+  font-weight: bold;
+  color: #555;
+}
+.lower-section .comment-list .comment-item .comment-header .comment-time {
+  color: #aaa;
+}
+.lower-section .comment-list .comment-item .comment-text {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.lower-section .comment-list .comment-item .comment-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.lower-section .comment-list .comment-item .comment-actions button {
+  background: #007bff;
+  border: none;
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.lower-section .comment-list .comment-item .comment-actions button:hover {
+  background: #0056b3;
+}
+
+/* Inline Edit Form for CommentItem */
+.edit-form textarea {
+  width: 100%;
+  min-height: 60px;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.edit-form .edit-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.edit-form .edit-actions button {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #28a745;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+.edit-form .edit-actions button:hover {
+  background: #218838;
+}
+.edit-form .edit-actions button:nth-child(2) {
+  background: #dc3545;
+}
+.edit-form .edit-actions button:nth-child(2):hover {
+  background: #c82333;
+}

@@ -59,12 +59,12 @@ const Carousel = ({ project }) => {
         {extendedImages.map((image, index) => (
           <div key={index} className="carousel-item">
             <img src={image} alt={title} />
-            {screenType === 'desktop' && (
+            {/* {screenType === 'desktop' && (
               <div className="overlay">
                 <h1>{title}</h1>
                 <p>{description}</p>
               </div>
-            )}
+            )} */}
           </div>
         ))}
       </div>
