@@ -11,20 +11,20 @@ const About = () => {
   const introText = '“자동차는 더 이상 단순한 기계제품이 아니라”라는 말씀에 큰 영감을 받아, 기술의 진보와 함께 소프트웨어의 역할이 점점 중요해지고 있다는 사실을 깨달았습니다. 이 계기로 프로그래밍에 관심을 갖게 되었고, 현재는 백엔드 개발 역량을 키우기 위해 꾸준히 학습하고 있습니다.새로운 도전에 대한 열정과 끊임없이 배우려는 자세로, 안정적이고 확장 가능한 시스템을 구축하는 백엔드 개발자로 성장하고자 합니다.'
 
   const skillsData = [
-    { name: '', icon: process.env.PUBLIC_URL + '/Java-Dark.svg' },
-    { name: 'Vue', icon: process.env.PUBLIC_URL + '/Python-Dark.svg' },
-    { name: 'Angular', icon: process.env.PUBLIC_URL + '/CPP.svg' },
-    { name: 'Angular', icon: process.env.PUBLIC_URL + '/JavaScript.svg' },
-    { name: '', icon: process.env.PUBLIC_URL + '/Spring-Dark.svg' },
-    { name: 'Vue', icon: process.env.PUBLIC_URL + '/FastAPI.svg' },
-    { name: 'Angular', icon: process.env.PUBLIC_URL + '/Django.svg' },
-    { name: '', icon: process.env.PUBLIC_URL + '/React.svg' },
-    { name: 'Vue', icon: process.env.PUBLIC_URL + '/VueJS-Dark.svg' },
-    { name: 'Angular', icon: process.env.PUBLIC_URL + '/MySQL-Dark.svg' },
-    { name: 'Angular', icon: process.env.PUBLIC_URL + '/MongoDB.svg' },
-    { name: 'Angular', icon: process.env.PUBLIC_URL + '/Git.svg' },
-    { name: 'Angular', icon: process.env.PUBLIC_URL + '/CSS.svg' },
-    { name: 'Angular', icon: process.env.PUBLIC_URL + '/Sass.svg' },
+    { name: 'Java', icon: process.env.PUBLIC_URL + '/Java-Dark.svg' },
+    { name: 'Python', icon: process.env.PUBLIC_URL + '/Python-Dark.svg' },
+    { name: 'C++', icon: process.env.PUBLIC_URL + '/CPP.svg' },
+    { name: 'Javascript', icon: process.env.PUBLIC_URL + '/JavaScript.svg' },
+    { name: 'Spring', icon: process.env.PUBLIC_URL + '/Spring-Dark.svg' },
+    { name: 'FastAPI', icon: process.env.PUBLIC_URL + '/FastAPI.svg' },
+    { name: 'Django', icon: process.env.PUBLIC_URL + '/Django.svg' },
+    { name: 'ReactJS', icon: process.env.PUBLIC_URL + '/React.svg' },
+    { name: 'VueJS', icon: process.env.PUBLIC_URL + '/VueJS-Dark.svg' },
+    { name: 'MySQL', icon: process.env.PUBLIC_URL + '/MySQL-Dark.svg' },
+    { name: 'MariaDB', icon: process.env.PUBLIC_URL + '/mariaDB.svg' },
+    { name: 'Git', icon: process.env.PUBLIC_URL + '/Git.svg' },
+    { name: 'CSS', icon: process.env.PUBLIC_URL + '/CSS.svg' },
+    { name: 'Sass', icon: process.env.PUBLIC_URL + '/Sass.svg' },
   ];
   const imagePath = process.env.PUBLIC_URL + '/logo512.png';
   const careerEvents = [
@@ -59,7 +59,7 @@ const About = () => {
     {
       year: '2023',
       period: '05.26',
-      title: '삼성 청년 SW아카데미 1학기 성적우수상상',
+      title: '삼성 청년 SW아카데미 1학기 성적우수상',
       description: '코딩 집중과정 종합성적 광주2반 1등',
       isStart: false,
     },

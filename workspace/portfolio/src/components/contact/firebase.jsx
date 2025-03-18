@@ -15,15 +15,14 @@ import {
   onSnapshot,
 } from "firebase/firestore";
 
-// Your Firebase configuration – replace with your actual values.
-const firebaseConfig = {
-    apiKey: "AIzaSyABwdNCUvJZXnC7K_U7uyA8MbGMsL-23CM",
-    authDomain: "portfolio-b7af2.firebaseapp.com",
-    projectId: "portfolio-b7af2",
-    storageBucket: "portfolio-b7af2.firebasestorage.app",
-    messagingSenderId: "651395638664",
-    appId: "1:651395638664:web:1c425175fe1458fe0c863d",
-    measurementId: "G-KS8FLH5Z5T"
+  const firebaseConfig = {
+    apiKey: process.env.REACT_APP_KEY,
+    authDomain: process.env.REACT_APP_FB_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FB_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FB_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FB_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FB_APP_ID,
+    measurementId: process.env.REACT_APP_MEASUREMENT_ID
   };
 
 // Initialize Firebase
