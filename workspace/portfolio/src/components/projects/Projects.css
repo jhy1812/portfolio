@@ -3,13 +3,14 @@
   text-align: center;
   margin-top: 3rem;
 }
-.projects-section h3 {
+.projects-section h1 {
   margin-bottom: 1.5rem;
   color: black;
 }
 
 .projects-grid {
   display: grid;
+  place-items: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   max-width: 1200px;

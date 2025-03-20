@@ -16,7 +16,7 @@ const Projects = ({ projects }) => {
 
   return (
     <section id="projects" className="projects-section">
-      <h3>Projects</h3>
+      <h2>Projects</h2>
       <div className="projects-grid">
         {projects.map((project) => (
           <ProjectCard

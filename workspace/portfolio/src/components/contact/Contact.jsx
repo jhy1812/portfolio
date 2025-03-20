@@ -65,10 +65,11 @@ const CommentItem = ({ commentData, onDelete, onUpdate }) => {
           <textarea
             value={editText}
             onChange={(e) => setEditText(e.target.value)}
+            maxLength="300"
           />
           <div className="edit-actions">
-            <button type="submit">Save</button>
-            <button type="button" onClick={() => setIsEditing(false)}>Cancel</button>
+            <button type="submit" className="save-button">Save</button>
+            <button type="button" className="cancel-button" onClick={() => setIsEditing(false)}>Cancel</button>
           </div>
         </form>
       ) : (
@@ -84,10 +85,10 @@ const CommentItem = ({ commentData, onDelete, onUpdate }) => {
 
 const Contact = () => {
   const contactLinks = {
-    phone: "+1 234 567 890",
-    email: "youremail@example.com",
-    github: "https://github.com/yourusername",
-    blog: "https://yourblog.com",
+    phone: "+82-10-9244-1258",
+    email: "jhy1812@naver.com",
+    github: "https://github.com/jhy1812",
+    blog: "https://jhy-day.tistory.com/",
   };
 
   const [nickname, setNickname] = useState('');
@@ -153,75 +154,75 @@ const Contact = () => {
 
   return (
     <div className="contact-section">
-    <h3>Contact Me</h3>
-    <div className="contact-me">
-      
-      <div className="upper-section">
-        <div className="contact-info">
-          <h2>Contact Information</h2>
-          <ul>
-            <li>
-              <span className="contact-item">Phone: {contactLinks.phone}</span>
-              <button className="copy-button" onClick={handleCopyPhone} title="Copy phone number">
+      <h1>Contact Me</h1>
+      <div className="contact-me">
+        <div className="upper-section">
+          <div className="contact-info">
+            <h2>Contact Information</h2>
+            <ul>
+              <li>
+                <span className="contact-item">Phone: {contactLinks.phone}</span>
+                <button className="copy-button" onClick={handleCopyPhone} title="Copy phone number">
                 📋
-              </button>
-            </li>
-            <li>
-              <span className="contact-item">Email: </span>
-              <a href={`mailto:${contactLinks.email}`} className="contact-link">{contactLinks.email}</a>
-            </li>
-            <li>
-              <span className="contact-item">GitHub: </span>
-              <a href={contactLinks.github} target="_blank" rel="noopener noreferrer" className="contact-link">{contactLinks.github}</a>
-            </li>
-            <li>
-              <span className="contact-item">Blog: </span>
-              <a href={contactLinks.blog} target="_blank" rel="noopener noreferrer" className="contact-link">{contactLinks.blog}</a>
-            </li>
-          </ul>
+                </button>
+              </li>
+              <li>
+                <span className="contact-item">Email: </span>
+                <a href={`mailto:${contactLinks.email}`} className="contact-link">{contactLinks.email}</a>
+              </li>
+              <li>
+                <span className="contact-item">GitHub: </span>
+                <a href={contactLinks.github} target="_blank" rel="noopener noreferrer" className="contact-link">{contactLinks.github}</a>
+              </li>
+              <li>
+                <span className="contact-item">Blog: </span>
+                <a href={contactLinks.blog} target="_blank" rel="noopener noreferrer" className="contact-link">{contactLinks.blog}</a>
+              </li>
+            </ul>
+          </div>
+          <div className="comment-form">
+            <h2>Leave a Comment</h2>
+            <form onSubmit={handleSubmit}>
+              <input 
+                type="text" 
+                placeholder="Nickname" 
+                value={nickname}
+                onChange={(e) => setNickname(e.target.value)}
+                required 
+              />
+              <input 
+                type="password" 
+                placeholder="Password(수정, 삭제 할 때 필요합니다.)" 
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required 
+              />
+              <textarea 
+                placeholder="Your comment..."
+                value={commentText}
+                onChange={(e) => setCommentText(e.target.value)}
+                required
+                maxLength="300"
+              />
+              <button type="submit">Submit Comment</button>
+            </form>
+            {formStatus && <p className="status">{formStatus}</p>}
+          </div>
         </div>
-        <div className="comment-form">
-          <h2>Leave a Comment</h2>
-          <form onSubmit={handleSubmit}>
-            <input 
-              type="text" 
-              placeholder="Nickname" 
-              value={nickname}
-              onChange={(e) => setNickname(e.target.value)}
-              required 
-            />
-            <input 
-              type="password" 
-              placeholder="Password" 
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required 
-            />
-            <textarea 
-              placeholder="Your comment..."
-              value={commentText}
-              onChange={(e) => setCommentText(e.target.value)}
-              required
-            />
-            <button type="submit">Submit Comment</button>
-          </form>
-          {formStatus && <p className="status">{formStatus}</p>}
+        <div className="lower-section">
+          <h2>Comments</h2>
+          <div className="comment-list">
+            {comments.map(c => (
+              <CommentItem 
+                key={c.id} 
+                commentData={c} 
+                onDelete={handleDeleteComment}
+                onUpdate={handleUpdateComment}
+              />
+            ))}
+          </div>
         </div>
       </div>
-      <div className="lower-section">
-        <h2>Comments</h2>
-        <div className="comment-list">
-          {comments.map(c => (
-            <CommentItem 
-              key={c.id} 
-              commentData={c} 
-              onDelete={handleDeleteComment}
-              onUpdate={handleUpdateComment}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
     </div>
   );
 };

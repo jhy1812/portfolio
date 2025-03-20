@@ -1,68 +1,95 @@
-.project-card {
-  width: 100%;
-  aspect-ratio: 3/3;
-  position: relative;
-  perspective: 1000px;
-  overflow: hidden;
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-.project-card .front,
-.project-card .back {
+
+.project-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.project-card {
+  width: 80%;
+  aspect-ratio: 1/1;
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.card-face {
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-  transition: transform 1s;
   backface-visibility: hidden;
-  transform-style: preserve-3d;
+  border-radius: 10px;
+  overflow: hidden;
 }
-.project-card .front img {
+
+.front {
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+.front img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: all 0.6s ease 0.2s;
-  border: 7px solid #060c1f;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-  border-color: #fff;
 }
-.project-card .back {
-  transform: rotateY(-180deg);
+
+.back {
   background-color: #44423a;
+  transform: rotateY(180deg);
+  color: white;
+  text-align: center;
   cursor: pointer;
 }
-.project-card figcaption {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  backface-visibility: hidden;
-  transform: translate(-50%, -50%) translateZ(100px);
-  color: #fff;
-  font-size: 20px;
-  display: block;
+
+.back-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
   text-align: center;
 }
-.project-card figcaption h3 {
-  min-width: 200px;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 2rem;
-  color: white;
+.back-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: white !important;
 }
-.project-card figcaption p {
-  font-weight: 200;
-  padding-top: 5px;
-  color: white;
+
+p {
   font-size: 1rem;
 }
-.project-card:hover .front {
+
+.project-card:hover .card-inner {
   transform: rotateY(180deg);
 }
-.project-card:hover .back {
-  transform: rotateY(0);
+
+/* 반응형 디자인 */
+@media (max-width: 500px) {
+  .project-card {
+    width: 80vw;
+  }
 }

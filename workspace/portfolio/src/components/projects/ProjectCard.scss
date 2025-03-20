@@ -1,97 +1,97 @@
-.project-card {
-  width: 100%;           // Fill the grid cell width
-  aspect-ratio: 3 / 3;    // Maintain a 4:3 ratio
-  position: relative;
-  perspective: 1000px;
-  overflow: hidden;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  .front,
-  .back {
-  
-    position: absolute;
-    top: 0;
-    left: 0;
+.project-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px; // 카드 간 간격 유지
+}
+
+.project-card {
+  // width: min(90vw, 300px); // 화면 크기에 따라 유동적으로 조정
+  width: 80%;
+  aspect-ratio: 1 / 1; // 정사각형 유지
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.card-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  border-radius: 10px; // 둥근 모서리 추가
+  overflow: hidden;
+}
+
+.front {
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+
+  img {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 1s;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
+    object-fit: cover; // 이미지 크기 자동 조정
   }
+}
 
-  // Front side: default face
-  .front {
-    // No additional transform here
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;  // Ensure image fills the card while preserving its aspect ratio
-      transition: all 0.6s ease 0.2s;
-      border: 7px solid #060c1f;
-      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-      border-color: #fff;
-    }
+.back {
+  background-color: #44423a;
+  transform: rotateY(180deg);
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.back-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  text-align: center;
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: white !important;
   }
-
-  // Back side: hidden until hover
-  .back {
-    transform: rotateY(-180deg);
-    background-color: #44423a;
-    cursor: pointer;
-
-    // &:hover {
-    //   background-color: #666;
-    // }
-    // img {
-    //   width: 100%;
-    //   height: 100%;
-    //   object-fit: cover;
-    //   transition: all 0.6s ease 0.2s;
-    //   border: 7px solid #060c1f;
-    //   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-    //   border-color: #041135;
-    // }
+}
 
 
-  }
+p {
+  font-size: 1rem;
+}
 
-  figcaption {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    backface-visibility: hidden;
-    transform: translate(-50%, -50%) translateZ(100px);
-    color: #fff;
-    font-size: 20px;
-    display: block;
-    text-align: center;
+.project-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
 
-    h3 {
-      min-width: 200px;
-      font-weight: 600;
-      text-transform: uppercase;
-      font-size: 2rem;
-      color: white;
-    }
-
-    p {
-      font-weight: 200;
-      padding-top: 5px;
-      color: white;
-      font-size: 1rem;
-    }
-  }
-
-  &:hover {
-    .front {
-      transform: rotateY(180deg);
-    }
-    .back {
-      transform: rotateY(0);
-    }
+/* 반응형 디자인 */
+@media (max-width: 500px) {
+  .project-card {
+    width: 80vw; // 작은 화면에서는 크기를 조정
   }
 }
