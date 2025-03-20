@@ -72,7 +72,7 @@ const projectsData = [
       { name: "Node.js", icon: process.env.PUBLIC_URL + '/Python-Dark.svg' },
       { name: "Node.js", icon: process.env.PUBLIC_URL + '/Spring-Dark.svg' },
       { name: "Node.js", icon: process.env.PUBLIC_URL + '/FastAPI.svg' },
-      { name: "MongoDB", icon: process.env.PUBLIC_URL + '/mariaDB.svg' }
+      { name: "MongoDB", icon: process.env.PUBLIC_URL + '/mariadb.svg' }
     ],
     responsibilities: "Led the development of core features, designed the architecture, and coordinated the team to implement a robust solution.",
     architectureImage: process.env.PUBLIC_URL + '/images/architecture.png',
@@ -99,7 +99,7 @@ const projectsData = [
     ],
     githubLink: "https://github.com/comfort42/busking",
     technologies: [
-      { name: "Javascript", icon: process.env.PUBLIC_URL + '/Javascript.svg' },
+      { name: "Javascript", icon: process.env.PUBLIC_URL + '/JavaScript.svg' },
       { name: "React.js", icon: process.env.PUBLIC_URL + '/React.svg' },
       { name: "Tailwind", icon: process.env.PUBLIC_URL + '/TailwindCSS-Dark.svg' },
       { name: "zustand", icon: process.env.PUBLIC_URL + '/Zustand.svg' }

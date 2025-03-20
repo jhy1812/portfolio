@@ -21,7 +21,7 @@ const About = () => {
     { name: 'ReactJS', icon: process.env.PUBLIC_URL + '/React.svg' },
     { name: 'VueJS', icon: process.env.PUBLIC_URL + '/VueJS-Dark.svg' },
     { name: 'MySQL', icon: process.env.PUBLIC_URL + '/MySQL-Dark.svg' },
-    { name: 'MariaDB', icon: process.env.PUBLIC_URL + '/mariaDB.svg' },
+    { name: 'MariaDB', icon: process.env.PUBLIC_URL + '/mariadb.svg' },
     { name: 'Git', icon: process.env.PUBLIC_URL + '/Git.svg' },
     { name: 'CSS', icon: process.env.PUBLIC_URL + '/CSS.svg' },
     { name: 'Sass', icon: process.env.PUBLIC_URL + '/Sass.svg' },
