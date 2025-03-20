@@ -1,5 +1,5 @@
-$desktop-height: 50vh;  // Frame size for desktop projects
-$mobile-height: 50vh;    // Frame size for mobile projects
+$desktop-height: 50vh; 
+$mobile-height: 50vh;    
 
 *, *:before, *:after {
   box-sizing: inherit;
@@ -13,8 +13,6 @@ $mobile-height: 50vh;    // Frame size for mobile projects
   margin: 0 auto;
 
   &.desktop {
-    // height: $desktop-height;
-    // width: $desktop-height / 2;
     height: $desktop-height;
     aspect-ratio: 14 / 9;
   }

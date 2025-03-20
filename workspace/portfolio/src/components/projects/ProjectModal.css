@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @keyframes fadeInOverlay {
   from {
     opacity: 0;
@@ -36,7 +35,7 @@
   width: min(1000px, 90vw);
   max-height: min(800px, 80vh);
   border-radius: 8px;
-  overflow: auto; /* Allow the entire modal content to scroll */
+  overflow: auto;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -44,7 +43,7 @@
 }
 
 .close-button {
-  position: sticky; /* So it remains visible at the top as you scroll */
+  position: sticky;
   border-radius: 100%;
   top: 10px;
   right: 10px;
@@ -54,30 +53,25 @@
   font-size: 1.5rem;
   cursor: pointer;
   z-index: 10;
-  margin-left: 96%; /* 임시방편 */
+  margin-left: 96%;
 }
 
-/* Modal content container */
 .modal-content {
   display: flex;
   flex-direction: column;
   padding: 1rem;
 }
 
-/* Top row: Carousel and Info */
 .modal-top {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
 }
 
-/* Left side: Carousel container */
 .modal-carousel {
   flex: 1;
-  /* Your Carousel component should handle its own sizing */
 }
 
-/* Right side: Project info */
 .modal-info-top {
   flex: 1;
   display: flex;
@@ -153,10 +147,11 @@
 .project-link .github-link img {
   height: 1rem;
 }
-/* Bottom section: Additional details */
+
 .modal-bottom {
   border-top: 1px solid #e0e0e0;
-  padding-top: 1rem;
+  padding: 1rem;
+  text-align: left;
 }
 .modal-bottom .description,
 .modal-bottom .responsibilities,
@@ -180,7 +175,6 @@
   border-radius: 4px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .modal-top {
     flex-direction: column;

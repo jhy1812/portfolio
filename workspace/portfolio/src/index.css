@@ -26,12 +26,14 @@ html {
 }
 
 .section {
-  scroll-margin-top: 60px; /* Adjust the value as needed */
+  scroll-margin-top: 60px; 
 }
+
 section {
-  padding-top: 60px;    /* Space equal to the navbar's height */
-  margin-top: -60px;    /* Negative margin to counter the extra space */
+  padding-top: 60px;    
+  margin-top: -60px;    
 }
+
 .section-wrapper {
   position: relative;
 }
@@ -39,6 +41,6 @@ section {
 .section-wrapper::before {
   content: "";
   display: block;
-  height: 60px;        /* Navbar height */
-  margin-top: -60px;   /* Pull it up */
+  height: 60px;        
+  margin-top: -60px;   
 }

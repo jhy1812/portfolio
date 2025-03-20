@@ -5,7 +5,7 @@ import {
   orderBy, 
   onSnapshot, 
   db 
-} from './firebase';  // Adjust the path as needed
+} from './firebase';  
 import { createComment, updateComment, deleteComment } from './firebase';
 import './Contact.scss';
 
@@ -55,7 +55,7 @@ const CommentItem = ({ commentData, onDelete, onUpdate }) => {
   return (
     <div className="comment-item">
       <div className="comment-header">
-        <span className="comment-nickname">{nickname}</span>
+        <span className="comment-nickname">작성자 : {nickname}</span>
         <span className="comment-time">
           {createdAt ? new Date(createdAt.seconds * 1000).toLocaleString() : ''}
         </span>
@@ -115,7 +115,7 @@ const Contact = () => {
     try {
       await createComment({
         nickname,
-        password,  // In production, hash the password
+        password,  
         comment: commentText,
       });
       setNickname('');
@@ -158,7 +158,7 @@ const Contact = () => {
       <div className="contact-me">
         <div className="upper-section">
           <div className="contact-info">
-            <h2>Contact Information</h2>
+            <h2>Contact Info.</h2>
             <ul>
               <li>
                 <span className="contact-item">Phone: {contactLinks.phone}</span>
@@ -181,7 +181,7 @@ const Contact = () => {
             </ul>
           </div>
           <div className="comment-form">
-            <h2>Leave a Comment</h2>
+            <h2>메모</h2>
             <form onSubmit={handleSubmit}>
               <input 
                 type="text" 

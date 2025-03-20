@@ -1,12 +1,10 @@
 import React from 'react';
 import ProfilePicture from './ProfilePicture';
 import Introduction from './Introduction';
-import Skills from './Skills';
 import CareerCalendar from './CareerCalendar';
 import './About.scss';
 
 const About = () => {
-  // Define your skills array. Replace 'path_to_icon' with actual paths.
   const introTitle = '';
   const introText = '“자동차는 더 이상 단순한 기계제품이 아니라”라는 말씀에 큰 영감을 받아, 기술의 진보와 함께 소프트웨어의 역할이 점점 중요해지고 있다는 사실을 깨달았습니다. 이 계기로 프로그래밍에 관심을 갖게 되었고, 현재는 백엔드 개발 역량을 키우기 위해 꾸준히 학습하고 있습니다.새로운 도전에 대한 열정과 끊임없이 배우려는 자세로, 안정적이고 확장 가능한 시스템을 구축하는 백엔드 개발자로 성장하고자 합니다.'
 
@@ -103,20 +101,16 @@ const About = () => {
     <section id="about" className="about-section">
       <div className="container">
 
-      <div className="left">
-        <ProfilePicture src={imagePath} alt="Your Name" />
-      </div>
-      <div className="right">
-      <Introduction 
-  introTitle={introTitle}
-  introText={introText}
-  skills={skillsData}
-/>
-        {/* <Introduction 
-          text="I am a developer passionate about creating innovative solutions. I enjoy working on full-stack projects and continuously learning new technologies."
-        /> */}
-        {/* <Skills skills={skillsData} /> */}
-      </div>
+        <div className="left">
+          <ProfilePicture src={imagePath} alt="Your Name" />
+        </div>
+        <div className="right">
+          <Introduction 
+            introTitle={introTitle}
+            introText={introText}
+            skills={skillsData}
+          />
+        </div>
       </div>
       <CareerCalendar events={careerEvents}></CareerCalendar>
     </section>

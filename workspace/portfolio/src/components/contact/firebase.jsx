@@ -1,4 +1,3 @@
-// firebase.js
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {
@@ -25,12 +24,10 @@ import {
     measurementId: process.env.REACT_APP_MEASUREMENT_ID
   };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
-// Export Firestore utilities if needed
 export {
   db,
   serverTimestamp,
@@ -45,11 +42,7 @@ export {
   onSnapshot,
 };
 
-/**
- * Create a new comment in the 'comments' collection.
- * @param {object} data - The comment data, e.g. { nickname, password, comment }
- * @returns {Promise<string>} - The ID of the created comment.
- */
+
 export async function createComment(data) {
   try {
     const commentRef = await addDoc(collection(db, "comments"), {
@@ -63,11 +56,6 @@ export async function createComment(data) {
   }
 }
 
-/**
- * Read a comment by its ID from the 'comments' collection.
- * @param {string} commentId - The ID of the comment.
- * @returns {Promise<object|null>} - The comment data or null if not found.
- */
 export async function readComment(commentId) {
   try {
     const commentRef = doc(db, "comments", commentId);
@@ -79,11 +67,6 @@ export async function readComment(commentId) {
   }
 }
 
-/**
- * Update a comment in the 'comments' collection.
- * @param {string} commentId - The ID of the comment.
- * @param {object} data - The new data to update.
- */
 export async function updateComment(commentId, data) {
   try {
     const commentRef = doc(db, "comments", commentId);
@@ -94,10 +77,6 @@ export async function updateComment(commentId, data) {
   }
 }
 
-/**
- * Delete a comment from the 'comments' collection.
- * @param {string} commentId - The ID of the comment.
- */
 export async function deleteComment(commentId) {
   try {
     const commentRef = doc(db, "comments", commentId);

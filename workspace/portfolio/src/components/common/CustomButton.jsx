@@ -5,7 +5,7 @@ const CustomButton = ({ children, ...props }) => {
   const handleMouseMove = (e) => {
     const btn = e.currentTarget;
     const rect = btn.getBoundingClientRect();
-    // Calculate mouse position relative to the button
+
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
     btn.style.setProperty('--x', `${x}px`);

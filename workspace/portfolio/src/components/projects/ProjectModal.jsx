@@ -2,10 +2,8 @@ import React from 'react';
 import Carousel from './Carousel';
 import './ProjectModal.scss';
 import CustomButton from '../common/CustomButton';
-// import CustomLink from '../common/CustomLink'
 
 const ProjectModal = ({ project, onClose }) => {
-  // Closes the modal if the click is on the overlay (outside the modal content)
   const handleOverlayClick = (e) => {
     if (e.target.classList.contains('project-modal-overlay')) {
       onClose();
@@ -52,7 +50,6 @@ const ProjectModal = ({ project, onClose }) => {
                 &nbsp;GitHub
               </a>
               <CustomButton 
-              // className="download-button" 
               onClick={() => window.open(project.presentationDownloadLink, '_blank')}
             >
               Presentation
@@ -62,8 +59,15 @@ const ProjectModal = ({ project, onClose }) => {
           </div>
           <div className="modal-bottom">
             <div className="responsibilities">
-              <h2>Task In Charge</h2>
-              <p>{project.responsibilities}</p>
+              <h2>담당 업무</h2>
+                <ul>
+                  {project.responsibilities.map((item, index) => {
+                    return (
+                      <li>{item}</li>
+                    )
+                  })}
+
+                </ul>
             </div>
             <div className="architecture">
               <h2>Architecture</h2>

@@ -1,14 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import './index.css';
 import Navbar from './components/common/Navbar.jsx'
 import About from './components/about/About.jsx'
 import Projects from './components/projects/Projects.jsx';
 import Contact from './components/contact/Contact.jsx';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Background from './components/common/Background.jsx';
 import { Helmet } from 'react-helmet';
 
 const projectsData = [
@@ -43,8 +40,14 @@ const projectsData = [
       { name: "Fast API", icon: process.env.PUBLIC_URL + '/FastAPI.svg' },
       { name: "Mysql", icon: process.env.PUBLIC_URL + '/MySQL-Dark.svg' },
     ],
-    responsibilities: "Led the development of core features, designed the architecture, and coordinated the team to implement a robust solution.",
-    architectureImage: process.env.PUBLIC_URL + '/cavendishmain.png',
+    responsibilities: [
+      "효율적인 데이터 저장 및 관리를 위해 테이블 구조를 설계하고 관계형 데이터베이스 모델을 구성함.",
+      "사용자들이 자유롭게 게시글을 작성하고 조회할 수 있도록 CRUD(Create, Read, Update, Delete) API를 설계 및 구현함.",
+      "사용자의 위치 정보를 활용하여 가까운 거래 가능 품목을 조회할 수 있도록 거리 계산 로직을 적용하고 최적화된 검색 기능을 구현함.",
+      "사용자가 여러 개의 이미지를 업로드할 수 있도록 AWS S3 스토리지와 연동하여 확장성 높은 파일 저장 기능을 개발함.",
+      "서비스에서 데이터를 효과적으로 활용할 수 있도록 가공 및 변환하여 API를 통해 클라이언트와 연동함.",
+    ],
+    architectureImage: process.env.PUBLIC_URL + '/mpar.png',
     presentationDownloadLink: process.env.PUBLIC_URL + '/C202_최종.pdf'
   },
   {
@@ -74,8 +77,13 @@ const projectsData = [
       { name: "Node.js", icon: process.env.PUBLIC_URL + '/FastAPI.svg' },
       { name: "MongoDB", icon: process.env.PUBLIC_URL + '/mariadb.svg' }
     ],
-    responsibilities: "Led the development of core features, designed the architecture, and coordinated the team to implement a robust solution.",
-    architectureImage: process.env.PUBLIC_URL + '/images/architecture.png',
+    responsibilities: [
+      "제품 정보, 호환성 데이터, 사용자 선호도 등을 효율적으로 저장하고 관리할 수 있도록 데이터베이스 구조를 설계함.",
+      "사용자 경험을 고려하여 직관적인 UI/UX를 적용하고, 추천 결과를 효과적으로 제공하는 메인 화면을 개발함.",
+      "제품 검색, 필터링, 상세 조회 등 사용자가 원하는 정보를 빠르게 제공할 수 있도록 API를 설계 및 구현함.",
+      " 컴퓨터 부품 간의 호환성을 판단하는 로직을 설계하고, 비트마스킹 기법을 활용하여 성능을 최적화함.",
+    ],
+    architectureImage: process.env.PUBLIC_URL + '/caar.png',
     presentationDownloadLink: process.env.PUBLIC_URL + '/C105_최종.pdf'
   },
   {
@@ -84,7 +92,7 @@ const projectsData = [
     period: "2023.07.10 - 2023.08.18",
     overview: "A brief overview of the project highlighting its key goals and achievements.",
     description: "셔틀버스 이용의 불편함을 해결하기 위해 개발된 플랫폼으로, 실시간 버스 위치 추적 기능을 제공하여 변동이 심한 도착 시간 문제를 개선하고, 버스 기사님에게 하차지 정보를 전달하여 이용자와의 마찰을 줄이는 것을 목표로 합니다. 이를 통해 SSAFY 교육생들의 셔틀버스 이용 경험을 더욱 편리하고 원활하게 만듭니다.",
-    screenType: "mobile", // or 'mobile'
+    screenType: "mobile",
     brief: "셔틀버스 위치 조회 어플리케이션",
     thumbnail: process.env.PUBLIC_URL + '/buskingmain.png', // or 'mobile'
     images: [
@@ -104,8 +112,12 @@ const projectsData = [
       { name: "Tailwind", icon: process.env.PUBLIC_URL + '/TailwindCSS-Dark.svg' },
       { name: "zustand", icon: process.env.PUBLIC_URL + '/Zustand.svg' }
     ],
-    responsibilities: "Led the development of core features, designed the architecture, and coordinated the team to implement a robust solution.",
-    architectureImage: process.env.PUBLIC_URL + '/cavendishmain.png',
+    responsibilities: [
+      "실시간 버스 위치 추적을 지원하는 지도 기반 UI를 개발하고, 직관적인 인터페이스를 설계하여 사용자 경험을 개선함.",
+      "관리자가 손쉽게 버스 경로를 설정할 수 있도록 드래그 앤 드롭 방식의 경로 편집 기능을 구현함.",
+      "버스의 실시간 위치 데이터를 벡터 연산을 활용하여 사전 정의된 경로에 자동으로 매칭하는 기능을 개발하여 정확도를 향상시킴.",
+    ],    
+    architectureImage: process.env.PUBLIC_URL + '/bkar.png',
     presentationDownloadLink: process.env.PUBLIC_URL + '/C108_최종.pdf'
   },
 ];
@@ -116,6 +128,7 @@ function App() {
       <Helmet>
         <link rel="icon" type="image/x-icon" href="/cavendishmain.ico"></link>
       </Helmet>
+        <Background></Background>
       <Navbar />
       <div className="content">
         <section id="about">

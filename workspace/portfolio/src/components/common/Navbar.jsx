@@ -8,14 +8,10 @@ const navItems = [
 ];
 
 const Navbar = () => {
-  // Track which nav item is active
   const [activeIndex, setActiveIndex] = useState(0);
-  // Store the underline's left position and width
   const [underlineStyle, setUnderlineStyle] = useState({});
-  // Create a ref array for nav items
   const navRefs = useRef([]);
 
-  // Update underline style based on the active nav item
   const updateUnderline = (index) => {
     if (navRefs.current[index]) {
       const node = navRefs.current[index];
@@ -26,26 +22,21 @@ const Navbar = () => {
     }
   };
 
-  // Update underline when active index changes
   useEffect(() => {
     updateUnderline(activeIndex);
   }, [activeIndex]);
 
-  // Update underline on window resize
   useEffect(() => {
     const handleResize = () => {
       updateUnderline(activeIndex);
     };
     window.addEventListener('resize', handleResize);
-    // Clean up the event listener on unmount
     return () => window.removeEventListener('resize', handleResize);
   }, [activeIndex]);
 
-  // Scroll spy: update active index based on scroll position
   useEffect(() => {
     const sectionIds = navItems.map((item) => item.href.slice(1));
     const handleScroll = () => {
-      // Use the vertical center of the viewport as the reference point
       const scrollPos = window.scrollY + window.innerHeight / 2;
       let newIndex = activeIndex;
       sectionIds.forEach((id, index) => {
@@ -64,7 +55,6 @@ const Navbar = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    // Run once on mount
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, [activeIndex]);

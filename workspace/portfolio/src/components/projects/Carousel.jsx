@@ -4,11 +4,9 @@ import './Carousel.scss';
 const Carousel = ({ project }) => {
   const { images, screenType, title, description } = project;
   
-  // Create an extended images array: clone the last image at the beginning and the first image at the end
   const extendedImages = [images[images.length - 1], ...images, images[0]];
-  const total = images.length; // number of real slides
+  const total = images.length; 
 
-  // Start at index 1 (first real slide)
   const [currentIndex, setCurrentIndex] = useState(1);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -28,18 +26,14 @@ const Carousel = ({ project }) => {
   };
 
   const handleTransitionEnd = () => {
-    // When we've reached the clone of the first slide (the last element in extendedImages)
     if (currentIndex === extendedImages.length - 1) {
-      // Disable transition and reset to first real slide (index 1)
       setTransitionEnabled(false);
       setCurrentIndex(1);
     }
-    // When we've reached the clone of the last slide (index 0)
     if (currentIndex === 0) {
       setTransitionEnabled(false);
       setCurrentIndex(extendedImages.length - 2);
     }
-    // Re-enable transitions and allow clicks on the next tick
     setTimeout(() => {
       setTransitionEnabled(true);
       setIsAnimating(false);
@@ -59,12 +53,6 @@ const Carousel = ({ project }) => {
         {extendedImages.map((image, index) => (
           <div key={index} className="carousel-item">
             <img src={image} alt={title} />
-            {/* {screenType === 'desktop' && (
-              <div className="overlay">
-                <h1>{title}</h1>
-                <p>{description}</p>
-              </div>
-            )} */}
           </div>
         ))}
       </div>

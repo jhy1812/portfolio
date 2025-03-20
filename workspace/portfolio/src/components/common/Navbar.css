@@ -22,8 +22,8 @@
   position: absolute;
   bottom: 0;
   height: 3px;
-  background-color: #a0bb2a; /* Underline color */
-  transition: left 0.3s ease, width 0.3s ease; /* Smooth moving effect */
+  background-color: #a0bb2a;
+  transition: left 0.3s ease, width 0.3s ease;
 }
 
 .nav-list {
@@ -31,7 +31,7 @@
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center; /* Center the nav items */
+  justify-content: center;
 }
 
 .nav-item {
@@ -40,14 +40,13 @@
 }
 
 .nav-item.active a {
-  color: #a0bb2a; /* Active color, adjust as desired */
+  color: #a0bb2a;
 }
 
 .nav-item:hover a {
   color: #902c2c;
 }
 
-/* Responsive adjustments for smaller screens */
 @media screen and (max-width: 768px) {
   .navbar {
     padding: 0.5rem 1rem;

@@ -1,23 +1,21 @@
 .career-calendar {
-  // max-width: 800px;
   width: 60%;
   min-width: 500px;
   margin: 2rem auto;
   padding: 3rem;
   font-family: 'Roboto', sans-serif;
   color: #333;
-  // background: linear-gradient(135deg, #fdfdfd 0%, #f1f1f1 100%);
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   position: relative;
+  background: rgb(242, 244, 251);
 
-  // Decorative vertical timeline line with a soft glow
   &::before {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 180px; // Right edge of the combined date columns (60px + 60px + some spacing)
+    left: 180px;
     width: 2px;
     background: #e0e0e0;
     box-shadow: 0 0 8px rgba(224, 224, 224, 0.5);
@@ -32,18 +30,17 @@
   padding: 1rem;
   border-radius: 8px;
   background: #ffffff;
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   z-index: 1;
+  
 
   &:hover {
     transform: translateX(5px) scale(1.02);
     background: #f9f9f9;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   }
 
-  // Marker dot for each timeline event with a subtle pulse
   &::before {
     content: '';
     position: absolute;
@@ -78,7 +75,7 @@
 .date-columns {
   display: flex;
   flex-shrink: 0;
-  width: 120px;  // 60px for year + 60px for period (as before)
+  width: 120px;  
   margin-right: 1rem;
 }
 
@@ -112,7 +109,6 @@
   }
 }
 
-// Reveal hidden year on hover for non-start events
 .timeline-item:hover .year-col .hidden-year {
   opacity: 1;
 }

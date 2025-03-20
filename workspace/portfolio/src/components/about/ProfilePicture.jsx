@@ -8,7 +8,6 @@ const ProfilePicture = ({ imageSrc, backgroundSrc, title }) => {
     const cardContainer = cardContainerRef.current;
     if (!cardContainer) return;
 
-    // For our single card, query its inner elements:
     const card = cardContainer.querySelector('.card');
     const image = card.querySelector('.card__img');
     const background = card.querySelector('.card__bg');
@@ -17,7 +16,7 @@ const ProfilePicture = ({ imageSrc, backgroundSrc, title }) => {
     let animationFrame;
 
     const mouseMoveHandler = (e) => {
-      // Use requestAnimationFrame to throttle the updates
+
       if (animationFrame) {
         window.cancelAnimationFrame(animationFrame);
       }
@@ -26,11 +25,8 @@ const ProfilePicture = ({ imageSrc, backgroundSrc, title }) => {
         const yValue = calcValue(y, window.innerHeight);
         const xValue = calcValue(x, window.innerWidth);
 
-        // Apply 3D rotation to the card container
         card.style.transform = `rotateX(${yValue}deg) rotateY(${xValue}deg) translateZ(35px)`;
-        // Move the image inside the card
         image.style.transform = `translateX(${-xValue}px) translateY(${yValue}px)`;
-        // Adjust the background position for a subtle parallax effect
         background.style.backgroundPosition = `${xValue * 0.45}px ${-yValue * 0.45}px`;
       });
     };

@@ -2,12 +2,14 @@
   display: flex;
   padding: 2rem;
   align-items: center;
-  margin-top: 3rem; //마진
+  margin-top: 3rem; 
   flex-direction: column;
+
   .container {
     display: flex;
     flex-direction: row;
   }
+
   .left {
     flex: 1;
     display: flex;
@@ -17,7 +19,6 @@
   
   .right {
     flex: 1;
-    // padding-left: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -28,20 +29,14 @@
   .about-section {
     flex-direction: column;
     text-align: center;
+
     .container {
       flex-direction: column;
     }
+
     .right {
       align-items: center;
       padding-left: 0;
     }
-    // .left {
-    //   width: 60%;
-    // }
   }
-  
-  
-  // .skills {
-  //   flex-direction: row;
-  // }
 }
