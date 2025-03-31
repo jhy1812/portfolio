@@ -57,7 +57,7 @@ class TextScramble {
 
 const phrases = [
   '안녕하세요, 정호윤입니다',
-  '백엔드를 공부하고 있습니다'
+  '열심히 공부 중에 있습니다'
 ];
 
 const Intro = () => {
